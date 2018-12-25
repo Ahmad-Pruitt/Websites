@@ -1,0 +1,123 @@
+<?php include('contact_process.php'); ?>
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="SBM Website.css">
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <!-- Jombotron at the top  -->
+
+        <div class="jumbotron">
+          <h1 class="display-4">Cleveland Business Machines</h1>
+          <p class="lead">The primer provider of copy devices and support in the Cleveland, Chattanooga, and North, GA area.</p>
+          <hr class="my-4">
+          <p>Please fill out the inforamtion below so that we may contact you.</p>
+        </div>
+
+    <!-- the navigation bar -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="CBMMain.html">CBM</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="CBMMain.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="CBMServices.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="CBMProducts.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="CBMSpecials.html">Specials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="CBMContact.html">Contact Us<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+<!-- Service Provided paragraph -->
+<br>
+<h2>Contact Us:</h2>
+  <p>Canon, Ricoh, Savin, HP, and many major makes a models.</p>
+
+<!-- Contact form for new orders -->
+    <br>
+    <form>
+      <div class="contact-form" action="<?php $_SERVER['PHP_SELF'] ?>" Method='POST'>
+        <label for="dbbname">Business Name</label>
+        <input type="text" class="form-control" id="dbbname" placeholder="Business Name" name="BusinessName"
+        <span class="error"><?php $Dbbname_error ?></span>
+        <label for="firstname">Point of Contact First Name</label>
+        <input type="text" class="form-control" id="firstname" placeholder="First Name" name="FirstName" required>
+        <span class="error"><?php $Firstname_error ?></span>
+        <label for="lastname">Point of Contact Last Name</label>
+        <input type="text" class="form-control" id="lastname" placeholder="Last Name" name="LastName" required>
+        <span class="error"><?php $Lastname_error ?></span>
+        <label for="newemail">Point of Contact Email Address</label>
+        <input type="email" class="form-control" id="email" placeholder="name@example.com" name="Email" required>
+        <span class="error"><?php $Email_error ?></span>
+        <label for="phone">Point of Contact Phone Number</label>
+        <input type="phone" class="form-control" id="phone" placeholder="###-###-####" name="Phone" required>
+        <span class="error"><?php $Phone_error ?></span>
+      </div>
+      <div class="form-group">
+        <label for="contactreason">Reason for Contact</label>
+        <select class="form-control" id="contactreason" name="Contactreason" required>
+          <option>Would like to order new supplies</option>
+          <option>Would like to request service on a machine(Must include photos of the machine and details of problem)</option>
+          <option>Would like to ask a general question</option>
+          <option>Would like to speak to a sales representative about establishing a new account</option>
+          <option>Would like to ask questions regarding a current account</option>
+        </select>
+        <span class="error"><?php $Contactreason_error ?></span>
+      </div>
+      <div class="form-group">
+        <label for="customercontactmethod">Please Indicate Preferred Contact Method</label>
+        <select multiple class="form-control" id="customercontactmethod" name="Customercontactmethod" required>
+          <option>Email</option>
+          <option>Phone Call</option>
+          <option>Fax</option>
+          <option>Text Massage</option>
+          <option>All of the above</option>
+        </select>
+        <span class="error"><?php $Customercontactmethod_error ?></span>
+      </div>
+      <div class="form-group">
+        <label for="customerinput">Please describe the reason for your contact today</label>
+        <textarea class="form-control" id="customerinput" name="Customerinput" rows="3" required>Please describe the reason for your contact today</textarea>
+        <span class="error"><?php $Customerinput_error ?></span>
+      </div>
+
+      <h2>If this is a service call please include error code/message, photo, or video of the machines performance to assist the technicians in solving your needs</h2>
+      <div class="form-group">
+    <label for="servicemedia">Please upload file here</label>
+    <input type="file" class="form-control-file" id="servicemedia" name="Servicemedia">
+    <span class="error"><?php $Servicemedia_error ?></span>
+  </div>
+
+    <div class="submit">
+      <button type="submit" name="submit">Submit Form</button>
+    </div>
+
+    </form>
+
+  </body>
+</html>
